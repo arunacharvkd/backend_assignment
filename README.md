@@ -44,7 +44,3 @@ For a production-ready system, I'd choose **PostgreSQL** (or a similar relationa
 2. **Query flexibility** – pagination, filtering, and aggregations are easily handled with SQL.
 3. **Foreign keys and schema** – ensure data integrity between users, posts, replies, etc.
 4. **Scalability** – PostgreSQL scales well vertically and has replication support.
-
-Alternatively, if the application expects very high read/write throughput with simpler data models, a horizontally-scalable NoSQL store like **DynamoDB** or **MongoDB** could be considered; but relational fits the current schema best.
-
----
