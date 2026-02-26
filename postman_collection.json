@@ -1,0 +1,196 @@
+{
+  "info": {
+    "_postman_id": "a9534505-15bc-472c-8897-50727ccdf17e",
+    "name": "Backend Assessment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4358788"
+  },
+  "item": [
+    {
+      "name": "auth/mock",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"userId\": \"u1\" }\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/auth/mock",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "auth",
+            "mock"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "posts",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "mock-u1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"text\": \"Hello world\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Feed",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/feed?cursor=2026-02-21T17:40:49.502Z&limit=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "feed"
+          ],
+          "query": [
+            {
+              "key": "cursor",
+              "value": "2026-02-21T17:40:49.502Z"
+            },
+            {
+              "key": "limit",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": " Add Reply",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\":\"This is my reply\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts/p_93c351d3-9197-4960-ad62-c44492afb35d/replies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "p_93c351d3-9197-4960-ad62-c44492afb35d",
+            "replies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upvote Toggle",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer mock-u1"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"text\":\"This is my reply\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts/p_93c351d3-9197-4960-ad62-c44492afb35d/upvote",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "p_93c351d3-9197-4960-ad62-c44492afb35d",
+            "upvote"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
